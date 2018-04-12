@@ -22,6 +22,7 @@ local.properties
 
 # PyDev specific (Python IDE for Eclipse)
 *.pydevproject
+*.pydevproject
 
 # CDT-specific (C/C++ Development Tooling)
 .cproject
@@ -151,5 +152,7 @@ fabric.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+# Shamdori add
+*.idea/
 
 # End of https://www.gitignore.io/api/git,java,eclipse,intellij
