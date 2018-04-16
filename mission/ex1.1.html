@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>스크립트 공부 1.1</title>
+</head>
+<body>
+	<h1>스크립트 공부 1일차</h1>
+	<p>1.1 버튼 클릭하면 지정된 텍스트를 변경한다</p>
+	
+	<form action="">
+		<p id="changeText">default text</p>
+		<div>
+			<button type="button" id="changeBtn">확인</button>
+		</div>
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById('changeBtn').onclick = function () {
+			var changeText = document.getElementById("changeText");
+			changeText.innerHTML = "change text";
+		}
+	</script>
+</body>
+</html>
