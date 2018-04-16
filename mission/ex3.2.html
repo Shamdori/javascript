@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>example 1</title>
+</head>
+<body>
+	<h1>스크립트 공부 3일차</h1>
+	<p>숫자 입력 후 버튼을 클릭하면 입력한 층수만큼 *이 늘어나고, 마름모 모양으로 출력한다</p>
+	<p>삼각형을 그리고, 역삼각형을 그리는 for문을 따로 실행</p>
+	<pre>
+ex)
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+	</pre>
+	<form action="">
+		<label for="rhombusNum">늘어나는 층수 입력: </label>
+		<input type="text" id="rhombusNum">
+		<button type="button" id="rhombusBtn">마름모 출력</button>
+	</form>
+	<pre id="result"></pre>
+	<script type="text/javascript">
+		document.getElementById('rhombusBtn').onclick = function () {
+			var rhombusNum = Number(document.getElementById("rhombusNum").value);
+			var result = document.getElementById("result");
+			var totalstar = "";
+			
+			for(var i = 0; i < rhombusNum; i++){
+				var star = "";
+				for(var j = rhombusNum; j > i; j--) {
+					star += " ";
+				}
+				for(var k = 0; k < i * 2 + 1; k++) {
+					star += "*";
+				}
+				totalstar += star + "\n";
+			}
+			for(var i = rhombusNum-2; i >= 0; i--){
+				var star = "";
+				for(var j = rhombusNum; j > i; j--) {
+					star += " ";
+				}
+				for(var k = 0; k < i * 2 + 1; k++) {
+					star += "*";
+				}
+				totalstar += star + "\n";
+			}
+			result.innerHTML = totalstar;
+		}
+	</script>
+</body>
+</html>
