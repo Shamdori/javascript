@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chaper 1.4</title>
+</head>
+<body>
+	<h1>특수 문자 삽입하기</h1>
+	<h2>문제. 줄바꿈 같은 특수 문자를 문자열에 삽입하고 싶습니다.</h2>
+	<div id="result">
+		
+	</div>
+	<script type="text/javascript">
+		var resultString = "<p>This page \u00A9 Shelley Powers </p>";
+		
+		// 페이지로 출력
+		var divEl = document.getElementById("result");
+		divEl.innerHTML = resultString;
+	</script>
+</body>
+</html>
