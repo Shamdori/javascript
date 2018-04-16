@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>예제 1-2</title>
+	<style type="text/css">
+		.found{background-color:red}
+	</style>
+<body>
+	<h1>예제 1-2</h1>
+	<h2>문제. String.replace와 특수 패턴을 사용해 문자열에서 텍스트를 검색하고 강조하기</h2>
+	<form id="textsearch">
+		<textarea id="incoming" cols="150" rows="10"></textarea>
+		<p>
+			Search pattern: <input type="text" id="pattern">
+		</p>
+	</form>
+	<button id="searchSubmit">Search for pattern</button>
+	<div id="searchResult"></div>
+	
+	<script type="text/javascript">
+		document.getElementById('searchSubmit').onclick=function () {
+			// 패턴 구하기
+			var pattern = document.getElementById('pattern').value;
+			var re = new RegExp(pattern,"g");
+			
+			// 문자열 구하기
+			var searchString = document.getElementById('incoming').value;
+			
+			// 치환하기
+			var resultString = searchString.replace(re, '<span class="found">$&</span>');
+			
+			// 페이지로 삽입
+			document.getElementById('searchResult').innerHTML = resultString;
+		}
+	</script>
+</body>
+</html>
