@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>example 2</title>
+</head>
+<body>
+	<h1>스크립트 공부 2일차</h1>
+	<p>출력할 단수를 입력받고 버튼 클릭시 해당 구구단이 출력되도록 한다.</p>
+	<form action="">
+		<div>
+			<label for="gugudanNum">단수 입력: </label>
+			<input type="text" id="gugudanNum">
+		</div>
+		<button type="button" id="gugudanBtn">출력</button>
+	</form>
+	<div id="result"></div>
+	<script type="text/javascript">
+		document.getElementById('gugudanBtn').onclick = function () {
+			var gugudanNum = document.getElementById("gugudanNum").value;
+			var result = document.getElementById("result");
+			if(result != null){
+				result.innerHTML = "<h2>" + gugudanNum + "단</h2>";
+				for(i=1; i<10; i++){
+					result.innerHTML += gugudanNum + "*" + i + "=" + gugudanNum * i + "<br>";
+				}
+			}
+		}
+	</script>
+</body>
+</html>
