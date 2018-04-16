@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chaper 1.5</title>
+<body>
+	<h1>패턴을 새 문자열로 대체하기</h1>
+	<h2>문제. 패턴에 일치하는 부분 문자열을 모두 새 문자열로 대체하고 싶습니다.</h2>
+	
+	<script type="text/javascript">
+		var searchString = "Now is the time, this is the tame";
+		var re = /t\w{2}e/g;
+//		var re = new RegExp('t\\w{2}e',"g");
+		var replacement = searchString.replace(re, "place");
+		document.write("searchString: " + searchString + "<br>");
+		document.write("replacement: " + replacement);
+	</script>
+</body>
+</html>
