@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chaper 1.6</title>
+<body>
+	<h1>패턴의 모든 사례를 찾고 강조하기</h1>
+	<h2>문제. 문자열 안에서 패턴의 모든 사례를 찾고 싶습니다.</h2>
+	
+	<script type="text/javascript">
+		var searchString = "Now is the time and this is the time and that is the time";
+		var pattern = /t\w*e/g;
+		var matchArray;
+		
+		var str = "";
+		
+		// repexp exec로 패턴 확인 null이 아니면 실행
+		while((matchArray = pattern.exec(searchString)) != null){
+			str += "at " + matchArray.index + " we found " + matchArray[0] + "<br>";
+		}
+		document.write(str);
+	</script>
+</body>
+</html>
