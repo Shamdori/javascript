@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chaper 1.11</title>
+<body>
+	<h1>경과 시간 구하기</h1>
+	<h2>Q. 이벤트 사이에 경과한 시간을 구하고 싶습니다.</h2>
+	<p>A. 첫 번째 이벤트가 발생할때 Date 객체를 생성하고 두 번째 이벤트가 발생할 때 다른 새 Date 객체를 생성한 뒤 두 번째 객체에서 첫 번째 객체를 뺍니다.</p>
+	<button type="button" id="timeCheck">시간체크</button>
+	<div id="result"></div>
+	
+	<script type="text/javascript">
+		var firstDate = new Date();
+
+		document.getElementById('timeCheck').addEventListener('click', timeCheck, false);
+		
+		function timeCheck(){
+			setTimeout(function() {
+				doEvent(firstDate);
+			}, 500);
+		}
+		
+		function doEvent() {
+			var result = document.getElementById('result');
+			var secondDate = new Date();
+			var diff = secondDate - firstDate;
+			result.innerHTML = diff;
+		}
+	</script>
+</body>
+</html>
