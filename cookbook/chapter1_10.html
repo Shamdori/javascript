@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chaper 1.10</title>
+	<style type="text/css">
+		.wrap_box{position:relative}
+		#redbox{position:absolute;top:10px;width:150px;height:150px;background:red}
+	</style>
+<body>
+	<h1>타이머와 함수 클로저 사용하기</h1>
+	<h2>Q. 타이머가 있는 함수를 제공하고 싶습니다 단 함수를 타이머 메서드 호출 시 바로 추가하고 싶습니다.</h2>
+	<p>A. 익명함수(anonymous function)를 첫 번째 매개변수로 사용해 setInterval()이나 setTimeout() 메서드를 호출하면 됩니다.</p>
+	<div class="wrap_box">
+		<div id="redbox"></div>
+	</div>
+	<script type="text/javascript">
+		var x = 0;
+		intervalId = setInterval(
+			function(){
+				if(x < 100){
+					x += 5;
+					var left = x + "px";
+					document.getElementById("redbox").style.left = left;
+				}
+			}, 100
+		);
+	</script>
+</body>
+</html>
