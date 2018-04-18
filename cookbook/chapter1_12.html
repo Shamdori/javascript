@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chaper 1.12</title>
+<body>
+	<h1>10진수 값을 16진수 값으로 변환하기</h1>
+	<h2>Q. 10진수 값을 크기가 같은 16진수 값으로 변환하고 싶습니다.</h2>
+	<p>A. Number 객체의 toString() 메서드를 사용하면 됩니다.</p>
+	<form action="">
+		<label for="decimalNumber">10진수 입력: </label>
+		<input type="text" id="decimalNumber">
+	</form>
+	<button type="button" id="changeBinaryNumber">2진수 변경하기</button>
+	<button type="button" id="changeHexadecimalNumber">16진수 변경하기</button>
+	<div id="resultBinaryNumber">2진수: </div>
+	<div id="resultHexadecimalNumber">16진수: </div>
+	
+	<script type="text/javascript">
+		var decimalText = document.getElementById('decimalNumber');
+		var resultBinaryNumber = document.getElementById('resultBinaryNumber');
+		var resultHexadecimalNumber = document.getElementById('resultHexadecimalNumber');
+
+		function changeBinaryNumber(){
+			var decimalNumber = parseInt(decimalText.value);
+			resultBinaryNumber.innerHTML += decimalNumber.toString(2);
+		}
+
+		function changeHexadecimalNumber(){
+			var decimalNumber = parseInt(decimalText.value);
+			resultHexadecimalNumber.innerHTML += decimalNumber.toString(16);
+		}
+		
+		document.getElementById('changeBinaryNumber').addEventListener('click', changeBinaryNumber, false);
+		document.getElementById('changeHexadecimalNumber').addEventListener('click', changeHexadecimalNumber, false);
+	</script>
+</body>
+</html>
