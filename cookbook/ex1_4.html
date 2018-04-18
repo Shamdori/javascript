@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>예제 1-4. setInterval과 익명 함수</title>
+	<style type="text/css">
+		.wrap_box{position:relative}
+		#redbox{position:absolute;left:0;top:10px;width:150px;height:150px;background:red}
+		#boxMove{margin-top:170px}
+	</style>
+<body>
+	<h1>예제 1-4</h1>
+	<h2>문제. setInterval 타이머 매개변수로 익명 함수 사용하기</h2>
+	<div class="wrap_box">
+		<div id="redbox"></div>
+		<button type="button" id="boxMove">박스 움직이기</button>
+	</div>
+	
+	<script type="text/javascript">
+		var intervalId = null;
+		
+		document.getElementById('boxMove').addEventListener('click', startBox, false);
+		
+		function startBox() {
+			if(intervalId == null) {
+				var x = 0;
+				intervalId = setInterval(
+					function() {
+						x += 5;
+						var left = x + "px";
+						document.getElementById('redbox').style.left = left;
+					}, 100);
+			} else {
+				clearInterval(intervalId);
+				intervalId = null;
+			}
+		}
+	</script>
+</body>
+</html>
