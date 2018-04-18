@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>예제 1-2</title>
+	<title>예제 1-2. 문자열 검색</title>
 	<style type="text/css">
 		.found{background-color:red}
 	</style>
@@ -11,10 +11,14 @@
 	<h1>예제 1-2</h1>
 	<h2>문제. String.replace와 특수 패턴을 사용해 문자열에서 텍스트를 검색하고 강조하기</h2>
 	<form id="textsearch">
-		<textarea id="incoming" cols="150" rows="10"></textarea>
-		<p>
-			Search pattern: <input type="text" id="pattern">
-		</p>
+		<div>
+			<label for="incoming">문자열 입력</label>
+			<textarea id="incoming" cols="150" rows="10"></textarea>
+		</div>
+		<div>
+			<label for="pattern">Search pattern: </label>
+			<input type="text" id="pattern">
+		</div>
 	</form>
 	<button id="searchSubmit">Search for pattern</button>
 	<div id="searchResult"></div>
