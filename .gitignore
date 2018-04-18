@@ -153,6 +153,6 @@ fabric.properties
 hs_err_pid*
 
 # Shamdori add
-#*.idea/
+*.idea/
 
 # End of https://www.gitignore.io/api/git,java,eclipse,intellij
