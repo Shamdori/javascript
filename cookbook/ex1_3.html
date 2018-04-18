@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>예제 1-3. ISO 날짜 변환</title>
+<body>
+	<h1>예제 1-3</h1>
+	<h2>문제. ISO 8601 형식 날짜를 자바스크립트 Date 객체로 변환하기</h2>
+	<form>
+		<div>
+			<label for="dateString">Datestring in ISO 8601 format: </label>
+			<input type="text" id="dateString" value="2009-10-15T19:20:20">
+		</div>
+	</form>
+	<button type="button" id="dateSubmit">Convert Date</button>
+	<div id="result"></div>
+	
+	<script type="text/javascript">
+		document.getElementById('dateSubmit').onclick=function () {
+			var dtstr = document.getElementById('dateString').value;
+			var convdate = convertISO8601toDate(dtstr);
+			
+			document.getElementById("result").innerHTML = convdate;
+		}
+		
+		function convertISO8601toDate(dtstr) {
+			
+			// 숫자를 제외한 모든 문자를 공백으로 대체
+			dtstr = dtstr.replace(/\D/g, " ");
+			
+			// 문자열 끝에 있는 모든 공백 제거
+			dtstr = dtstr.replace(/\s+$/, "");
+			
+			// 공백을 기준으로 분리
+			var dtcomps = dtstr.split(" ");
+			
+			// 모든 ISO 8601 날짜가 그대로 변환 가능한 것은 아님
+			// 월 일이 없으면 유효하지 않음
+			if(dtcomps.length < 3) return "invalid date";
+			
+			//시간 정보가 없으면 0으로 설정
+			if(dtcomps.length < 4) {
+				dtcomps[3] = 0;
+				dtcomps[4] = 0;
+				dtcomps[5] = 0;
+			}
+			
+			// ISO 8601에 따라 월 수정
+			dtcomps[1]--;
+			
+			var convdt =  new Date(Date.UTC.apply(null, dtcomps));
+			
+			return convdt.toUTCString();
+		}
+	</script>
+</body>
+</html>
