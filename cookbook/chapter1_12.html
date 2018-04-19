@@ -6,34 +6,39 @@
 	<title>Chaper 1.12</title>
 <body>
 	<h1>10진수 값을 16진수 값으로 변환하기</h1>
-	<h2>Q. 10진수 값을 크기가 같은 16진수 값으로 변환하고 싶습니다.</h2>
+	<h2>Q. 10진수 값을 크기가 같은 2진수, 8진수, 16진수 값으로 변환하고 싶습니다.</h2>
 	<p>A. Number 객체의 toString() 메서드를 사용하면 됩니다.</p>
 	<form action="">
-		<label for="decimalNumber">10진수 입력: </label>
-		<input type="text" id="decimalNumber">
+		<div>
+			<label for="selectNumber">변환 하고 싶은 진수 선택: </label>
+			<select id="selectNumber">
+				<option value="2">2진수</option>
+				<option value="8">8진수</option>
+				<option value="16">16진수</option>
+			</select>
+		</div>
+		<div>
+			<label for="decimalNumber">10진수 입력: </label>
+			<input type="text" id="decimalNumber">
+		</div>
+		<button type="button" id="changeNumber">변경하기</button>
 	</form>
-	<button type="button" id="changeBinaryNumber">2진수 변경하기</button>
-	<button type="button" id="changeHexadecimalNumber">16진수 변경하기</button>
-	<div id="resultBinaryNumber">2진수: </div>
-	<div id="resultHexadecimalNumber">16진수: </div>
+	<div id="resultNumber"></div>
 	
 	<script type="text/javascript">
-		var decimalText = document.getElementById('decimalNumber');
-		var resultBinaryNumber = document.getElementById('resultBinaryNumber');
-		var resultHexadecimalNumber = document.getElementById('resultHexadecimalNumber');
-
-		function changeBinaryNumber(){
-			var decimalNumber = parseInt(decimalText.value);
-			resultBinaryNumber.innerHTML += decimalNumber.toString(2);
-		}
-
-		function changeHexadecimalNumber(){
-			var decimalNumber = parseInt(decimalText.value);
-			resultHexadecimalNumber.innerHTML += decimalNumber.toString(16);
+		// 10진수를 입력 받아 원하는 진수로 변환하기
+		function changeNumber() {
+			var selectNumber = document.getElementById('selectNumber').value;
+			var decimalNumber = parseInt(document.getElementById('decimalNumber').value);
+			
+			if(isNaN(decimalNumber) == true) {
+				alert('숫자를 입력해주세요.');
+			}else {
+				resultNumber.innerHTML = selectNumber + "진수: " + decimalNumber.toString(selectNumber);
+			};
 		}
 		
-		document.getElementById('changeBinaryNumber').addEventListener('click', changeBinaryNumber, false);
-		document.getElementById('changeHexadecimalNumber').addEventListener('click', changeHexadecimalNumber, false);
+		document.getElementById('changeNumber').addEventListener('click', changeNumber, false);
 	</script>
 </body>
 </html>
