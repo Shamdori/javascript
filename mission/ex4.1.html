@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>example 4.1</title>
+	<style type="text/css">
+		.screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+		div{position:relative;padding-bottom:30px}
+		p{font-size:12px}
+		.txt_error{position:absolute;bottom:10px;color:red}
+	</style>
+	<script type="text/javascript" src="./ex4.1.js"></script>
+</head>
+<body>
+	<h1>스크립트 공부 4일차</h1>
+	<p>회원가입 양식에서 벨리데이션을 체크 후 유효하지 않은 경우에 에러메세지를 노출한다.</p>
+	
+	<form id="joinForm" name="joinForm">
+		<input type="hidden" id="userId" name="userId">
+		<input type="hidden" id="userPassword" name="userPassword">
+		<input type="hidden" id="userName" name="userName">
+		<input type="hidden" id="userEmail" name="userEmail">
+		<input type="hidden" id="userPhone" name="userPhone">
+		<fieldset>
+			<legend class="screen_out">회원가입 양식</legend>
+			<h2 class="tit_join">회원가입</h2>
+			<div class="wrap_id">
+				<label for="memberId">아이디</label>
+				<input type="text" id="memberId" name="memberId">
+				<p>(영문 + 숫자)</p>
+				<p class="txt_error"></p>
+			</div>
+			<div class="wrap_password">
+				<label for="memberPassword">비밀번호</label>
+				<input type="password" id="memberPassword" name="memberPassword">
+				<p>(영문, 숫자, 특수문자를 모두 사용)</p>
+				<p class="txt_error"></p>
+			</div>
+			<div class="wrap_password2">
+				<label for="memberPasswordConfirm">비밀번호 확인</label>
+				<input type="password" id="memberPasswordConfirm" name="memberPasswordConfirm">
+				<p>(비밀번호 재입력)</p>
+				<p class="txt_error"></p>
+			</div>
+			<div class="wrap_name">
+				<label for="memberName">이름</label>
+				<input type="text" id="memberName" name="memberName">
+				<p>(한글만)</p>
+				<p class="txt_error"></p>
+			</div>
+			<div class="wrap_email">
+				<label for="memberEmailId">이메일<span class="screen_out">계정</span></label>
+				<input type="text" id="memberEmailId" name="memberEmailId">
+				<span>@</span>
+				<label for="memberEmailDomain"><span class="screen_out">이메일 도메인 선택</span></label>
+				<input type="text" id="memberEmailDirect" name="memberEmailDirect" title="이메일 도메인 직접입력">
+				<select id="memberEmailDomain" name="memberEmailDomain">
+					<option value="">직접입력</option>
+					<option value="naver.com">naver.com</option>
+					<option value="daum.net">daum.net</option>
+					<option value="hotmail.com">hotmail.com</option>
+					<option value="gmail.com">gmail.com</option>
+				</select>
+				<p>(이메일 입력)</p>
+				<p class="txt_error"></p>
+			</div>
+			<div class="wrap_phone">
+				<label for="memberPhone">휴대폰번호</label>
+				<input type="text" id="memberPhone" name="memberPhone">
+				<p>(숫자만)</p>
+				<p class="txt_error"></p>
+			</div>
+			<div class="wrap_agree">
+				<span>약관동의</span><br>
+				<label for="memberagree1">동의</label>
+				<input type="radio" name="memberAgree" id="memberAgree1">
+				<label for="memberagree2">동의하지 않음</label>
+				<input type="radio" name="memberAgree" id="memberAgree2">
+				<p>(동의체크)</p>
+				<p class="txt_error"></p>
+			</div>
+			<div>
+				<button type="button" id="memberJoin">회원가입하기</button>
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>
