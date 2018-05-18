@@ -3,7 +3,7 @@
 링크 : [30 Days To Learn jQuery](https://www.youtube.com/playlist?list=PL-EWM1MTD1VzGv1w5tLrK2dVCpGnH2SYo)
 
 ## 목차
-1. [Helloj Query](#1-helloj-query)
+1. [Hello jQuery]
 2. Not So Fast
 3. The Basics of Querying the Dom
 4. Events 101
@@ -32,5 +32,5 @@
 27. Head First Into Plugin Development
 28. goodbye
 
-## 1-Helloj-Query
-
+## 1. Hello jQuery
+[Hello jQuery]
